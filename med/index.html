@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<!-- เว็บนี้เขียนโดย Twitter : @mingmon --> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>โปรแกรมคำนวณคะแนนสำหรับผู้สอบ กสพท.</title>
+<!--calculation-->
+<script type="text/javascript" src="calc.js"></script>
+<!--End calculation-->
+
+<!-- jQuery tab ui + CSS -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <style type="text/css">
+  .accordion {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+}
+blockquote{
+	font-size: 24pt;
+	font-family: supermarket;
+	line-height: 1.5em;
+	text-align: center;
+	color: #555;
+	margin: 20px auto 50px auto;
+	padding-top: 30px;
+	width: 850px;
+	background: url(qleft.png) top left no-repeat, url(qright.png) bottom right no-repeat;
+}
+  </style>
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });
+  </script>
+<!-- End jQuery UI-->
+</head>
+
+<body>
+<center>
+  <h1>ระบบคำนวณคะแนน กสพท.</h1>
+  <p>Current version : v2.7 <!-- <a href="javascript:opench()">Change log</a> --> <a href="javascript:openmes()">ฝากข้อความ</a></p>
+  <p><blockquote>หากผมมีเวลาว่าง จะมาอัพเดทให้อีกนะครับ :)</blockquote>&nbsp;</p>
+  <div id="fb-root"></div>
+  
+<!--Facebook Like -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=122409487843591";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like" data-href="http://highvoltage.bl.ee/~byakko/calc/" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+<!--End Facebok like-->
+
+</center>
+<br>
+<center>
+<form name="frm">
+<table width="600" border="0">
+  <tr>
+    <td>7 วิชา</td>
+    <td>เต็ม</td>
+    <td>เต็ม(%)</td>
+    <td>ได้</td>
+    <td>ได้(%)</td>
+  </tr>
+  <tr>
+    <td>PHY</td>
+    <td>100</td>
+    <td>13.33</td>
+    <td>
+  
+    <input class="txt1" type="text" name="phy" maxlength="5" size="6" onkeypress="checknumber()" onKeyUp="Calphy()" ></td>
+    <td>
+    <input name="phys" type="text" disabled onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2" > </td>
+  </tr>
+  <tr>
+    <td>CHE</td>
+    <td>100</td>
+    <td>13.33</td>
+    <td><label for="che"></label>
+    <input name="che" type="text" id="che" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Calche()" /></td>
+    <td><label for="bios"></label>
+    <input name="ches" type="text" disabled id="textfield3" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>BIO</td>
+    <td>100</td>
+    <td>13.33</td>
+    <td><label for="bio"></label>
+    <input name="bio" type="text" id="bio" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Calbio()"/></td>
+    <td><label for="mats"></label>
+    <input name="bios" type="text" disabled id="textfield4" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>MAT</td>
+    <td>100</td>
+    <td>20</td>
+    <td><label for="mat"></label>
+    <input name="mat" type="text" id="mat" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Calmat()" /></td>
+    <td><label for="engs"></label>
+    <input name="mats" type="text" disabled id="textfield5" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>ENG</td>
+    <td>100</td>
+    <td>20</td>
+    <td><label for="eng"></label>
+    <input name="eng" type="text" id="eng" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Caleng()"  /></td>
+    <td><label for="thas"></label>
+    <input name="engs" type="text" disabled id="textfield6" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>THA</td>
+    <td>100</td>
+    <td>10</td>
+    <td><label for="tha"></label>
+    <input name="tha" type="text" id="tha" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Caltha()" /></td>
+    <td><label for="socs"></label>
+    <input name="thas" type="text" disabled id="textfield7" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>SOC</td>
+    <td>100</td>
+    <td>10</td>
+    <td><label for="soc"></label>
+    <input name="soc" type="text" id="soc" size="6" maxlength="5" onkeypress="checknumber()" onKeyUp="Calsoc()" /></td>
+    <td><label for="sum"></label>
+    <input name="socs" type="text" disabled id="textfield8" onkeypress="checknumber()" onKeyUp="Calsum()" size="6" maxlength="2"></td>
+  </tr>
+  <tr>
+    <td>รวม</td>
+    <td>-</td>
+    <td>100 %</td>
+    <td><input name="calc" onclick="Calsum(this.form)" type="BUTTON" value="คำนวณ7วิชา"></td>
+    <td>
+    
+    
+    
+    
+    <label for="textfield9"></label>
+    ได้ 
+    <input name="sums" type="text" disabled id="textfield9" size="6" maxlength="5">
+    
+    </td>
+  </tr>
+<br >
+<!--
+<script>
+if((document.frm.phy.value+document.frm.che.value+document.frm.bio.value)<30||document.frm.mat.value<30||document.frm.tha.value<30||document.frm.eng.value<30||document.frm.soc.value<30){
+document.write("บางวิชาไม่ผ่านเกณฑ์30 %");
+}
+</script>
+-->
+
+</table>
+
+<table width="600" border="0">
+  <tr>
+    <td><center>
+      นำ 7 วิชาสามัญมาคิดเป็น 70%
+    </center></td>
+  </tr>
+  <tr>
+    <td><center>
+      <label for="sevs"></label>
+      <input name="calc" onclick="Cal70(this.form)" type="BUTTON" value="คำนวณ70%"><input name="sevs" type="text" disabled id="sevs">
+    </center></td>
+  </tr>
+</table>
+<br>
+<table width="600" border="0">
+  <tr>
+    <td><center>
+    คะแนนวิชาเฉพาะ (เต็ม 300)
+    </center></td>
+  </tr>
+  <tr>
+    <td><center>
+      ได้ 
+      <label for="ex"></label>
+      <input name="ex" type="text" id="ex" onkeypress="checknumber()" onKeyUp="Calex()" maxlength="7">
+    </center></td>
+  </tr>
+  <tr>
+    <td><center>
+
+    คิดเป็น 30% 
+    <label for="exs"></label>
+    <input name="exs" type="text" disabled id="exs">
+    </center></td>
+  </tr>
+</table>
+<br>
+<table width="600" border="0">
+  <tr>
+    <td><center>
+    คะแนนรวม 100%
+    </center></td>
+  </tr>
+  <tr>
+    <td><center><input name="calc" onclick="Calallsum(this.form)" type="BUTTON" value="คำนวณรวม100%">
+    </center></td>
+  </tr>
+  <tr>
+    <td><center>
+      <label for="propp"></label>
+      #&gt;&gt;
+      <input name="allsum" type="text" disabled id="allsum">
+    &lt;&lt;#
+    </center></td>
+  </tr>
+</table>
+<br>
+<table width="600" border="0">
+  <tr>
+    <td><center>
+      คำนวณสถาบันที่มีโอกาศติด
+    (คิดจากคะแนนต่ำสุดปีการศึกษา 2556)
+    </center></td>
+  </tr>
+  <tr>
+    <td><center><input name="prop" onclick="Calprop(this.form)" type="BUTTON" value="คำนวณสถาบันที่มีโอกาศสอบติด" id="prop">
+    </center></td>
+  </tr>
+  <tr>
+    <td><center>
+      <label for="propp"></label>
+      <input name="propp" type="text" disabled id="propp" size="110">
+    </center></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</form>
+<!--Tab-->
+ตารางคะแนน สูงสุด-ต่ำสุด
+<!--Test-->
+<div id="accordion">
+  <h3>Academic Year 2557</h3>
+  <div>
+    <p>&nbsp;</p>
+    <img src="score57.jpg" width="601" height="589" alt=""/>  </div>
+  <h3>Academic Year 2556</h3>
+  <div>
+    <p><img src="score56.jpg" width="565" height="471" alt=""/></p>
+  </div>
+  <h3>Academic Year 2555-2552</h3>
+  <div>
+    <p><img src="score52to55.png" width="1137" height="544" alt=""/></p>
+  </div>
+  
+</div>
+<!--End Tab-->
+<br > Coded by codename:พรุ้ย</a>
+</center></body>
+</html>
