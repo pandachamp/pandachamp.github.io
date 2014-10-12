@@ -1,75 +1,120 @@
 <!doctype html>
 <html>
+<meta charset="UTF-8">
 <head>
-<meta charset="utf-8">
-<title>PangYa : Hole in One</title>
+<title>PangYa : Hole in One :3</title>
+<link rel="stylesheet" href="bootstrap.min.css">
 <script type="text/javascript" src="cal.js"></script>
-
+<style>
+* { font-family: Helvetica; }
+body { background: #bdc3c7; }
+.container {margin-top:30px;}
+#box { background: #ecf0f1; padding: 20px 20px; 
+-webkit-box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+-moz-box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+}
+</style>
 </head>
-
 <body>
+<script src="js/bootstrap.min.js"></script>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6" id="box">
+			<center><h1>PangYa : Hole in One</h1></center><hr>
 
-<h1>PangYa : Holes in One :3</h1>
-
-<form name="cal" role="form">
-  <div class"forms">
-  <table width="404" border="0">
-    <tr>
-      <td width="52">Distance</td>
-      <td width="234"><input type="text" name="dis" id="dis" onKeyUp="calc()"></td>
-    </tr>
-    <tr>
-      <td>Height</td>
-      <td><input type="text" name="hi" id="hieght" onKeyUp="calc()"></td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td><input name="c" type="text" disabled id="c"></td>
-    </tr>
-    <tr>
-      <td>C of To</td>
-      <td><input type="text" name"ctos"  id="ctos" disabled></td>
-    </tr>
-    <tr>
-      <td>Wind</td>
-      <td><input type="text" name="wind" id="wind" onKeyUp="calc()"></td>
-    </tr>
-    <tr>
-      <td>Angle of Wind</td>
-      <td><input type="text" name="angw" id="angw" onKeyUp="calc()"></td>
-    </tr>
-    <tr>
-      <td valign="top">Wind position</td>
-      <td><p>
-          <input type="radio" name="windp" id="radio" value="1" onClick="calc()">
-        Top Right</p>
-        <p>
-  <input type="radio" name="windp" id="radio" value="2" onClick="calc()">
-          Top Left          </p>
-        <p>
-          <input type="radio" name="windp" id="radio" value="3" onClick="calc()">
-        
-          Bottom Right          </p>
-        <p>
-  <input type="radio" name="windp" id="radio" value="4" onClick="calc()">
-          Bottom Left        </p>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td><input name="pcell" type="text" disabled id="pcell" size="12">
-      <input name="cell" type="text" disabled id="cell"></td>
-    </tr>
-    <tr>
-      <td>Power</td>
-      <td><input name="power" type="text" disabled id="power"></td>
-    </tr>
-  </table>
-  <p>&nbsp;</p>
-  <p>developed by Byakko : ENE นะ</p> 
-  </div>
-</form>
-
-
-
+	  <form name="cal" class="form-horizontal" role="form">
+			<div class="form-group">
+                <label for="distance" class="col-sm-2 control-label">Distance</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="dis" placeholder="Distance" name="dis" onKeyUp="calc()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Height</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="hi" placeholder="บอกเครื่องหมาย - ด้วยกรณีหลุมต่ำกว่า" name="hi" onKeyUp="calc()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">C</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" disabled id="c" placeholder="C" name="c">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">C Tomahawk</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" disabled id="ctos" placeholder="C Tomahawk" name="ctos">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Wind</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="wind" placeholder="Wind" name="wind" onKeyUp="calc()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Angle of Wind</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="angw" placeholder="Degree" name="angw" onKeyUp="calc()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Wind Position</label>
+                <div class="col-sm-6">
+                    <div class="radio">
+                    <label>
+    <input type="radio" name="windp" id="windp" value="2" onClick="calc()" checked>
+    Top Left
+  </label>
+  <label>
+    <input type="radio" name="windp" id="windp" value="1" onClick="calc()" checked>
+    Top Right
+  </label>
+  <label>
+    <input type="radio" name="windp" id="windp" value="4" onClick="calc()" checked>
+    Bottom Left
+  </label>
+  <label>
+    <input type="radio" name="windp" id="windp" value="3" onClick="calc()" checked>
+    Bottom Right
+  </label>
+</div>
+                    </div>
+                </div>
+                <!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Green Cell</label>
+                <div class="col-sm-6">
+                <input type="text" class="form-control" id="pcell" disabled placeholder="ทิศทางย้าย" name="pcell" >
+                    <input type="text" class="form-control" id="cell" disabled placeholder="ช่วงการย้ายใน Green" name="cell" >
+                </div>
+            </div>
+       		<!-- -->
+            <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Power</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" disabled id="power" placeholder="ความแรงที่ใช้ตี" name="power">
+                </div>
+            </div>
+            
+            
+            
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+	<center><h6><i>Developed by Byakko : ENE นะ</i>| <a href="howto.html">How to use</a></h6> 
+</div>
 </body>
 </html>
