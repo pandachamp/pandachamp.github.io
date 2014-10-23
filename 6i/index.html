@@ -68,6 +68,23 @@ box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
             </div>
             <!-- -->
             <div class="form-group">
+                <label for="ballposit" class="col-sm-2 control-label">Ball Position</label>
+                <div class="col-sm-6">
+                    <div class="radio">
+                    <label>
+    <input type="radio" name="ballp" id="ballp" value="1" onClick="calbeam()" checked>
+    Fairway
+  </label>
+  <label>
+    <input type="radio" name="ballp" id="ballp" value="2" onClick="calbeam()">
+    Rough
+  </label>
+  
+</div>
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
                 <label for="gcell" class="col-sm-2 control-label">Green Cell</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="greencell" placeholder="Move" name="green" disabled>
