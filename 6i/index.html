@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>PangYa : Beam Impact with 6I</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<script type="text/javascript" src="calbeam.js"></script>
+
+<style>
+* { font-family: Helvetica; }
+body { background: #bdc3c7; }
+.container {margin-top:30px;}
+#box { background: #ecf0f1; padding: 20px 20px; 
+-webkit-box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+-moz-box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
+}
+</style>
+</head>
+<body>
+<script src="bootstrap.min.js"></script>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6" id="box">
+			<center><h1>PangYa : Beam Impact with 6I</h1></center><hr>
+
+	  <form name="cal" class="form-horizontal" role="form">
+
+			<div class="form-group">
+                <label for="dis" class="col-sm-2 control-label">Distance</label>
+                <div class="col-sm-6">
+                     <input type="text" class="form-control" id="dis" placeholder="Distance" name="dis" onKeyUp="calbeam()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="wind" class="col-sm-2 control-label">Wind</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="wind" placeholder="Wind" name="wind" onKeyUp="calbeam()">
+                </div>
+            </div>
+            <!-- -->
+         <div class="form-group">
+                <label for="angwind" class="col-sm-2 control-label">Angle of Wind</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="angwind" placeholder="Wind in Degree" name="angwind" onKeyUp="calbeam()">
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="windposit" class="col-sm-2 control-label">Wind Position</label>
+                <div class="col-sm-6">
+                    <div class="radio">
+                    <label>
+    <input type="radio" name="windp" id="windp" value="2" onClick="calbeam()" checked>
+    Top
+  </label>
+  <label>
+    <input type="radio" name="windp" id="windp" value="1" onClick="calbeam()">
+    Bottom
+  </label>
+  
+</div>
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="gcell" class="col-sm-2 control-label">Green Cell</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="greencell" placeholder="Move" name="green" disabled>
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="powerp" class="col-sm-2 control-label">Power in Percent</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="powerp" placeholder="%" name="powerp"  disabled>
+                </div>
+            </div>
+            <!-- -->
+            <div class="form-group">
+                <label for="power" class="col-sm-2 control-label">Power</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="power"  name="powerr" disabled>
+                </div>
+            </div>
+            <!-- -->
+            
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+	<center><h6><i>Developed by Byakko : ENE นะ</i> | <a href="http://pandachamp.github.io/hio">Hole in One</a>
+	  <!--<a href="howto.html">How to use</a>--></h6> 
+</div>
+</body>
+</html>

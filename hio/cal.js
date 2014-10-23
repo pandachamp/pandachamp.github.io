@@ -83,8 +83,7 @@ function calc(){
 	var sinanwin = Math.sin((angwind*3.14)/180);
 	var ce = (cto*wind * sinanwin)/0.217;
 
-	var windeff = cto*wind*(Math.cos((angwind*3.14)/180))//(cto*wind*Math.cos((angwind*3.14)/180));
-
+	var windeff = cto*wind*(Math.cos((angwind*3.14)/180));
 	var celll = ce / 4.5;
 
 	document.cal.cell.value= (celll);
