@@ -1,5 +1,6 @@
 // JavaScript Document
 function calc(){
+    var clubd = Number(document.cal.clubd.value);
 	var dis = Number(document.cal.dis.value);
 	var hi = parseFloat(document.cal.hi.value);
 	var nhi = Math.floor(hi);
@@ -14,6 +15,8 @@ function calc(){
 
 	var c = dis+ch;
 	document.cal.c.value = c;
+    if(clubd==264){
+    
 	if (c>=185&&c<=189){
 		var cto = (c*0.33)/185;
 	}
@@ -73,6 +76,50 @@ function calc(){
 	else if (c>=275&&c<=279){
 		var cto = (c*0.93)/275;
 	}
+    }//end if 264
+    else if (clubd==256){
+    if(c>=206&&c<=210){
+        var cto = (c*0.47)/206;
+    }
+    else if(c>=211&&c<=215){
+        var cto = (c*0.50)/211;
+    }
+    else if(c>=216&&c<=220){
+        var cto = (c*0.53)/216;
+    }
+    else if(c>=221&&c<=225){
+        var cto = (c*0.55)/221;
+    }
+    else if(c>=226&&c<=230){
+        var cto = (c*0.58)/226;
+    }
+    else if(c>=231&&c<=235){
+        var cto = (c*0.61)/231;
+    }
+    else if(c>=236&&c<=240){
+        var cto = (c*0.65)/236;
+    }
+    else if(c>=241&&c<=245){
+        var cto = (c*0.68)/241;
+    }
+    else if(c>=246&&c<=250){
+        var cto = (c*0.72)/246;
+    }
+    else if(c>=251&&c<=255){
+        var cto = (c*0.76)/251;
+    }
+    else if(c>=256&&c<=260){
+        var cto = (c*0.80)/256;
+    }
+    else if(c>=261&&c<=265){
+        var cto = (c*0.84)/261;
+    }
+    else if(c>=266&&c<=270){
+        var cto = (c*0.88)/266;
+    }
+        
+    
+    }//end if 256
 	document.cal.ctos.value = cto;
 
 	//input wind

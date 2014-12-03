@@ -26,8 +26,25 @@ box-shadow:rgb(0, 0, 0) 0px 0px 60px -20px;
 			<center><h1>PangYa : Hole in One</h1></center><hr>
 
 	  <form name="cal" class="form-horizontal" role="form">
+           <div class="form-group">
+                <label for="height" class="col-sm-2 control-label">Club Distance</label>
+                <div class="col-sm-6">
+                    <div class="radio">
+                    <label>
+    <input type="radio" name="clubd" id="clubd" value="256" onClick="calc()" checked>
+    256
+  </label>
+  <label>
+    <input type="radio" name="clubd" id="clubd" value="264" onClick="calc()">
+    264
+  </label>
+  
+</div>
+                    </div>
+                </div>
+                <!-- -->
 			<div class="form-group">
-                <label for="distance" class="col-sm-2 control-label">Distance</label>
+                <label for="distance" class="col-sm-2 control-label">Hole Distance</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="dis" placeholder="Distance" name="dis" onKeyUp="calc()">
                 </div>
