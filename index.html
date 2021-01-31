@@ -19,8 +19,9 @@
         <p>Developer | Gamer</p>
         <img src='img/profile.jpg' class="round">
       </header>
-      <section>
-        <h1>Puri Phakmongkol</h1>
+      <section id="main">
+        
+<!--         <h1>Puri Phakmongkol</h1>
 
         <p>I am a network engineer who experienced in software development especially in network automation and software-defined network (Network Software Engineer). I always enjoys solving complex problems and leaning new things such as Software Developments, IoTs, Computer Networks, Automation Technologies and Data Science.</p>
         <p>Most of my software projects were developed in Python, PHP and Java.</p>
@@ -112,7 +113,7 @@
         <ul>
           <li>Python : Hardware Programming with Raspberry Pi</li>
           <li>PHP : Backend</li>
-        </ul>
+        </ul> -->
 
       </section>
       <footer>
@@ -121,5 +122,18 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous"></script>
+    <script>
+      fetch('https://raw.githubusercontent.com/suakow/suakow.github.io/master/cv.md')
+        .then(response => response.text())
+        .then((data) => {
+          console.log(data)
+          let converter = new showdown.Converter()
+          let html = converter.makeHtml(data)
+          
+          let section = document.getElementById('main')
+          section.innerHTML = html
+      })
+    </script>
   </body>
 </html>
