@@ -32,7 +32,6 @@
       fetch('https://raw.githubusercontent.com/suakow/suakow.github.io/master/cv.md')
         .then(response => response.text())
         .then((data) => {
-          console.log(data)
           let converter = new showdown.Converter()
           let html = converter.makeHtml(data)
           
