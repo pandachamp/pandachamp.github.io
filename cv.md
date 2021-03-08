@@ -11,7 +11,7 @@ Curriculum Vitae
 ## Work Experienced
 
 ### [2020-Now] Chulalongkorn University
-**Artificial Intelligence Researcher**
+**AI Apprenticeship**
 
 I have a project in my responsibility about AI for health. This project, I have to research about machine learning in Time-Series forecasting for disease treatment. Furthermore, I am not only working on machine learning model development, but also working on data pipeline system, database design, data acquisition system, back-end development and mobile application development.
 
