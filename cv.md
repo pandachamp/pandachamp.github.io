@@ -5,6 +5,8 @@ A graduate student who enjoy solving complex problems and learning new things su
 
 Most of my software products were developed in Python, PHP and Java.
 
+I am a Thai native speaker, intermediate in English and know a basic of Japanese.
+
 Curriculum Vitae
 =====
 
